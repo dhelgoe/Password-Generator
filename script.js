@@ -2,6 +2,10 @@
 var generateBtn = document.querySelector("#generate");
 
 var passwordlength;
+var lowercasevalid;
+var uppercasevalid;
+var includespecial;
+var includenumbers;
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -25,18 +29,74 @@ function generatePassword() {
 
 
   
-    if (passwordlength<8 || passwordlength>128);
-    alert("Must be within 8-128 characters");
+    if (passwordlength<8 || passwordlength>128) {
+      alert("Must be within 8-128 characters");
+    
+    } else {
+      includelowercase();
+    }
+}
 
-    else if()
+  function includelowercase() {
+    lowercasevalid = prompt("Would you like to include lowercase characters, Y or N?");
+    console.log("Lower Case" + lowercasevalid);
+    
+    if (lowercasevalid == 'Y' || lowercasevalid == 'N'){
+      includeuppercase();
+    
+    } else {
+      alert("Please type Y or N");
+    }
+
+  
+
   }
+
+  function includeuppercase() {
+    uppercasevalid = prompt("Would you like to include uppercase characters, Y or N?");
+    console.log("Upper Case" + uppercasevalid);
+
+    if (uppercasevalid == 'Y' || uppercasevalid == 'N'){
+      includespecialcharacters();
+
+    } else {
+      alert("Please type Y or N");
+    }
+  } 
+
+  function includespecialcharacters() {
+    includespecial = prompt("Would you like to include special characters, Y or N?");
+    console.log("Special Characters" + includespecial);
+
+    if (includespecial == 'Y' || includespecial == 'N'){
+      includeanynumbers();
+
+    } else {
+      alert("Please type Y or N");
+    }
+  } 
+
+  function includeanynumbers() {
+    includenumbers = prompt("Would you like to include numbers, Y or N?");
+    console.log("Numbers" + includenumbers);
+
+    if (includenumbers == 'Y' || includenumbers == 'N'){
+      questionsdone();
+
+    } else {
+      alert("Please type Y or N");
+    }
+  } 
+  
+  
+  
+
   
   
   
   
 
    
-
 
 
 
